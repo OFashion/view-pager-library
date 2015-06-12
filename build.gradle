@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.2.3'
+    }
+}
+
+
+apply plugin: 'com.android.library'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion Integer.parseInt(COMPILE_SDK)
+    buildToolsVersion BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        targetSdkVersion Integer.parseInt(TARGET_SDK)
+        minSdkVersion Integer.parseInt(MIN_SDK_SAMPLE)
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v13:22.1.1'
+}
