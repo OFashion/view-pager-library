@@ -1,9 +1,10 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 android {
     compileSdkVersion Integer.parseInt(COMPILE_SDK)
     buildToolsVersion BUILD_TOOLS_VERSION
 
     defaultConfig {
+        applicationId "com.viewpagerindicator.sample"
         targetSdkVersion Integer.parseInt(TARGET_SDK)
         minSdkVersion Integer.parseInt(MIN_SDK_SAMPLE)
     }
@@ -16,10 +17,10 @@ android {
     }
 
     lintOptions {
-        abortOnError true
+        abortOnError false
     }
 }
 
 dependencies {
-    api 'com.android.support:support-v4:28.0.0'
+    api project(':lib')
 }
