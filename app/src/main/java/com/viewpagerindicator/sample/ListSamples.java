@@ -1,12 +1,5 @@
 package com.viewpagerindicator.sample;
 
-import java.text.Collator;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -16,7 +9,24 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import java.text.Collator;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class ListSamples extends ListActivity {
+
+    private final static Comparator<Map<String, Object>> NAME_COMPARATOR =
+            new Comparator<Map<String, Object>>() {
+                private final Collator collator = Collator.getInstance();
+
+                public int compare(Map<String, Object> map1, Map<String, Object> map2) {
+                    return collator.compare(map1.get("title"), map2.get("title"));
+                }
+            };
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,8 +40,8 @@ public class ListSamples extends ListActivity {
         }
 
         setListAdapter(new SimpleAdapter(this, getData(path),
-                android.R.layout.simple_list_item_1, new String[] { "title" },
-                new int[] { android.R.id.text1 }));
+                android.R.layout.simple_list_item_1, new String[]{"title"},
+                new int[]{android.R.id.text1}));
         getListView().setTextFilterEnabled(true);
     }
 
@@ -92,15 +102,6 @@ public class ListSamples extends ListActivity {
         return myData;
     }
 
-    private final static Comparator<Map<String, Object>> NAME_COMPARATOR =
-        new Comparator<Map<String, Object>>() {
-        private final Collator   collator = Collator.getInstance();
-
-        public int compare(Map<String, Object> map1, Map<String, Object> map2) {
-            return collator.compare(map1.get("title"), map2.get("title"));
-        }
-    };
-
     protected Intent activityIntent(String pkg, String componentName) {
         Intent result = new Intent();
         result.setClassName(pkg, componentName);
@@ -124,7 +125,7 @@ public class ListSamples extends ListActivity {
     @Override
     @SuppressWarnings("unchecked")
     protected void onListItemClick(ListView l, View v, int position, long id) {
-        Map<String, Object> map = (Map<String, Object>)l.getItemAtPosition(position);
+        Map<String, Object> map = (Map<String, Object>) l.getItemAtPosition(position);
 
         Intent intent = (Intent) map.get("intent");
         startActivity(intent);

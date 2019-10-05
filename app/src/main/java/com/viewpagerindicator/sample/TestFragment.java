@@ -1,7 +1,6 @@
 package com.viewpagerindicator.sample;
 
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +9,11 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+
 public final class TestFragment extends Fragment {
     private static final String KEY_CONTENT = "TestFragment:Content";
+    private String mContent = "???";
 
     public static TestFragment newInstance(String content) {
         TestFragment fragment = new TestFragment();
@@ -25,8 +27,6 @@ public final class TestFragment extends Fragment {
 
         return fragment;
     }
-
-    private String mContent = "???";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

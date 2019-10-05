@@ -1,9 +1,8 @@
 package com.viewpagerindicator.sample;
 
 import android.os.Bundle;
-import androidx.viewpager.widget.ViewPager;
+
 import com.viewpagerindicator.UnderlinePageIndicator;
-import com.viewpagerindicator.sample.R;
 
 public class SampleUnderlinesNoFade extends BaseSampleActivity {
     @Override
@@ -13,10 +12,10 @@ public class SampleUnderlinesNoFade extends BaseSampleActivity {
 
         mAdapter = new TestFragmentAdapter(getSupportFragmentManager());
 
-        mPager = (ViewPager)findViewById(R.id.pager);
+        mPager = findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);
 
-        UnderlinePageIndicator indicator = (UnderlinePageIndicator)findViewById(R.id.indicator);
+        UnderlinePageIndicator indicator = findViewById(R.id.indicator);
         indicator.setViewPager(mPager);
         indicator.setFades(false);
         mIndicator = indicator;

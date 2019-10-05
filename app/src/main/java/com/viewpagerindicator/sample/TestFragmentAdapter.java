@@ -3,12 +3,12 @@ package com.viewpagerindicator.sample;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+
 import com.viewpagerindicator.IconPagerAdapter;
-import com.viewpagerindicator.sample.R;
 
 class TestFragmentAdapter extends FragmentPagerAdapter implements IconPagerAdapter {
-    protected static final String[] CONTENT = new String[] { "This", "Is", "A", "Test", };
-    protected static final int[] ICONS = new int[] {
+    protected static final String[] CONTENT = new String[]{"This", "Is", "A", "Test",};
+    protected static final int[] ICONS = new int[]{
             R.drawable.perm_group_calendar,
             R.drawable.perm_group_camera,
             R.drawable.perm_group_device_alarms,
@@ -31,20 +31,20 @@ class TestFragmentAdapter extends FragmentPagerAdapter implements IconPagerAdapt
         return mCount;
     }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-      return TestFragmentAdapter.CONTENT[position % CONTENT.length];
-    }
-
-    @Override
-    public int getIconResId(int index) {
-      return ICONS[index % ICONS.length];
-    }
-
     public void setCount(int count) {
         if (count > 0 && count <= 10) {
             mCount = count;
             notifyDataSetChanged();
         }
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return TestFragmentAdapter.CONTENT[position % CONTENT.length];
+    }
+
+    @Override
+    public int getIconResId(int index) {
+        return ICONS[index % ICONS.length];
     }
 }

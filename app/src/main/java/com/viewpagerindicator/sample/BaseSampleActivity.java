@@ -1,15 +1,15 @@
 package com.viewpagerindicator.sample;
 
-import java.util.Random;
-
-import com.viewpagerindicator.PageIndicator;
-import com.viewpagerindicator.sample.R;
-
-import androidx.fragment.app.FragmentActivity;
-import androidx.viewpager.widget.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager.widget.ViewPager;
+
+import com.viewpagerindicator.PageIndicator;
+
+import java.util.Random;
 
 public abstract class BaseSampleActivity extends FragmentActivity {
     private static final Random RANDOM = new Random();
