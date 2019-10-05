@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.viewpagerindicator.sample"
-    android:versionCode="65"
-    android:versionName="2.4.1">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.viewpagerindicator.sample">
 
     <application
         android:icon="@drawable/icon"
-        android:label="ViewPagerIndicator Sample">
+        android:label="ViewPagerIndicator Sample"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
         <activity
             android:name=".ListSamples"

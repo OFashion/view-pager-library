@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.viewpagerindicator.sample"
         targetSdkVersion Integer.parseInt(TARGET_SDK)
-        minSdkVersion Integer.parseInt(MIN_SDK_SAMPLE)
+        minSdkVersion Integer.parseInt(MIN_SDK)
     }
 
     buildTypes {

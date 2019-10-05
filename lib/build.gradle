@@ -5,7 +5,9 @@ android {
 
     defaultConfig {
         targetSdkVersion Integer.parseInt(TARGET_SDK)
-        minSdkVersion Integer.parseInt(MIN_SDK_SAMPLE)
+        minSdkVersion Integer.parseInt(MIN_SDK)
+        versionCode Integer.parseInt(VERSION_CODE)
+        versionName VERSION_NAME
     }
 
     buildTypes {
@@ -22,4 +24,5 @@ android {
 
 dependencies {
     api 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
 }
